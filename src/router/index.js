@@ -14,6 +14,10 @@ export const routes = [
 		component: About
 	},
 	{
+		path:'/edit/:id',
+		component: Insert
+	},
+	{
 		path: '/test',
 		component: Test
 	},
@@ -23,6 +27,10 @@ export const routes = [
 	},
 	{
 		path: '/show',
+		component: Show
+	},
+	{
+		path: '/show/:id',
 		component: Show
 	}
 ]

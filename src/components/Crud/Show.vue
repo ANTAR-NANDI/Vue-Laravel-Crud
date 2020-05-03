@@ -7,15 +7,15 @@
 
               <h5 class="card-title">{{item.email}}</h5>
           </div>
-      </router-link>
+      
 
       <div class="card-footer">
         <p class="card-text">{{item.name}}</p>
-       
-        
+        <button @click="edit(index)" class="btn btn-secondary"><router-link :to="{path:'/edit/'+item.id}">Edit</router-link></button>
 
-    </div>
+    </div> 
 </div>
+
 	</div>
 </template>
 
@@ -24,11 +24,14 @@
 		data()
 		{
 			return{
-				items:[]
+				items:[],
+				
+
 			}
 		},
 		mounted()
 		{
+			
 			this.fetchdata()
 		},
 		methods:{
@@ -37,19 +40,15 @@
 			  var self=this
 			  axios.get('http://127.0.0.1:8000/api/show')
 			  .then(response => {
-			            // setTimeout(function(){
+			           
 			              self.items = response.data
-			              // self.$store.commit('getinventory',response.data)
-			              // self.loading=false
-			            // },3000)
-			            
-
-			            //console.log(response);
+			            //  self.data = response.data
+			              
 			        })
-			}
-		}
+			
 	}
-	
+}
+	}
 
 </script>
 
